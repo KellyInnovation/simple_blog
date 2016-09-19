@@ -9,3 +9,10 @@ def index(request):
 		"posts": posts
 	}
 	return render(request, "blog/index.html", context)
+
+def post(request, id):
+	post = Post.objects.get(pk=id)
+	context = {
+		"post": post
+	}
+	return render(request, "blog/post.html", context)
